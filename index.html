@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌿 維運日報系統</title>
+    <style>
+        /* 鄉村小清新風格定義 */
+        :root {
+            --primary-green: #81c784;    /* 主色：草綠 */
+            --bg-color: #f9fdf9;         /* 背景：極淺綠 */
+            --text-color: #445d48;       /* 文字：深森林綠 */
+            --accent-color: #c8e6c9;     /* 裝飾：淡綠 */
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: "PingFang TC", "Microsoft JhengHei", sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            width: 100%;
+            max-width: 450px;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            border: 1px solid var(--accent-color);
+        }
+
+        h2 {
+            text-align: center;
+            font-weight: 400;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+            color: var(--primary-green);
+        }
+
+        h2::before, h2::after {
+            content: " 🌿 ";
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1.5px solid var(--accent-color);
+            border-radius: 12px;
+            box-sizing: border-box;
+            outline: none;
+            transition: all 0.3s;
+            background-color: #fff;
+        }
+
+        input:focus, textarea:focus {
+            border-color: var(--primary-green);
+            box-shadow: 0 0 8px rgba(129, 199, 132, 0.2);
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            background-color: var(--primary-green);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+
+        button:hover {
+            background-color: #66bb6a;
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #999;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>維運日報表</h2>
+    
+    <form action="https://docs.google.com/forms/d/e/1FAIpQLScYgZy257bhsIpbWWLjrb9AHGslh7XLqX-y5EEBlVoQvKNSnA/formResponse" method="POST">
+        
+        <div class="form-group">
+            <label>日期</label>
+            <input type="date" name="entry.1335878800" required>
+        </div>
+
+        <div class="form-group">
+            <label>填表人員</label>
+            <input type="text" name="entry.536561245" placeholder="例如：林慶倫" required>
+        </div>
+
+        <div class="form-group">
+            <label>今日天氣</label>
+            <select name="entry.65954101" required>
+                <option value="晴天">☀️ 晴天</option>
+                <option value="陰天">☁️ 陰天</option>
+                <option value="雨天">🌧️ 雨天</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>今日工作內容</label>
+            <textarea name="entry.1093262937" rows="4" placeholder="請描述今日工作重點..." required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label>備註事項</label>
+            <textarea name="entry.226885827" rows="2" placeholder="如有特殊狀況請註明"></textarea>
+        </div>
+
+        <button type="submit">傳送日報回後台</button>
+    </form>
+    
+    <div class="footer">
+        © 2024 維運管理系統 - 鄉村風介面
+    </div>
+</div>
+
+</body>
+</html>
